@@ -15,4 +15,26 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
     return view('home');
-});
+})->name('home');
+
+Route::get('chi-siamo', function () {
+
+    $data = [
+        'title' => 'Chi siamo',
+        'users' => [
+            'Gianni',
+            'Giacomo',
+            'Giuseppe',
+            'Giovanni'
+        ]
+    ];
+
+    return view('chi-siamo', $data);
+})->name('chi-siamo');
+
+Route::get('lorem-ipsum', function () {
+    $data = [
+        'lorem' => 'Testo con lorem ipsum'
+    ];
+    return view('lorem-ipsum', $data);
+})->name('lorem-ipsum');
